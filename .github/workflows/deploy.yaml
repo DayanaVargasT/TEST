@@ -2,14 +2,15 @@ name:"Hola mundo"
 
 on:
   push:
-    branches:["main"]  
+    branches:["master"]  
  
 
 jobs:
   deploy-codigofacilito:
     runs-on: ubuntu-latest
-    step:
-      run: echo "Hacemos pull del codigo"
-      run: echo "correr migraciones"
-      run: echo "generar binario"
-      run: echo "publicar version"
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Hacemos pull del codigo"
+      - run: echo "correr migraciones"
+      - run: echo "generar binario"
+      - run: echo "publicar version"
